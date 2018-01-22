@@ -1,0 +1,24 @@
+<div class="container">
+        <div class="starter-template">
+            <h1>Welcome to CyberGroup Tech Talks</h1>
+            <p class="lead">Login with your CyberGroup ID to <br>gain access to all the upcoming <strong>Tech Talks</strong></p>
+
+        </div>
+    </div>
+
+    <!-- Login Container -->
+    <div class="container">
+        <form ng-submit="loginCheck()">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email"
+                ng-model="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd"
+                ng-model="password">
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>

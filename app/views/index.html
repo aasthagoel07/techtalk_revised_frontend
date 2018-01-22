@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="techtalk">
 
 <head>
     <meta charset="utf-8">
@@ -14,9 +14,18 @@
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="../../node_modules/angular/angular.js"></script>
+    <script src="../../node_modules/angular-route/angular-route.js"></script>
+    
     <script src="../../assets/js/app.js"></script>
 
     <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/app.js"></script>
+    
+    <script src="../controllers/indexController.js"></script>
+    <script src="../controllers/userdasboardController.js"></script>
+    <script src="../controllers/admindasboardController.js"></script>
+    <script src="../controllers/adduserController.js"></script>
+    <script src="../services/routes.js"></script>
 
 
 
@@ -24,7 +33,7 @@
 </head>
 
 
-<body>
+<body ng-controller="indexController">
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#"><img class="logoIm" src="../../assets/images/logo.png"></a>
@@ -54,30 +63,10 @@
 
         </div>
     </nav>
+    
+    <div ng-view=""></div>
 
-    <div class="container">
-        <div class="starter-template">
-            <h1>Welcome to CyberGroup Tech Talks</h1>
-            <p class="lead">Login with your CyberGroup ID to <br>gain access to all the upcoming <strong>Tech Talks</strong></p>
-
-        </div>
-    </div>
-
-    <!-- Login Container -->
-    <div class="container">
-        <form action="/action_page.php">
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd">
-            </div>
-            <button type="submit" class="btn btn-dark">Submit</button>
-        </form>
-    </div>
-
+    
 
 
     <footer class="page-footer">
