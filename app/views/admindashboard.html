@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" ng-init="getAllEvents()">
     <div class="row">
         <div class="col-sm-9">
             <table id="eventTable" class="table table-bordered table-condensed table-striped">
@@ -7,15 +7,15 @@
                     <tr>
                         <th>Event Name</button>
                         </th>
-                        <th>Presenter Name</th>
+                        <th>Event Description</th>
                         <th>Event Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="row in rows">
-                        <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">{{row.Ename}}</td>
-                            <td>{{row.Pname}}</td>
-                            <td>{{row.Edate}}</td>
+                        <td><button type="button" class="btn btn-info">{{row.ename}}</td>
+                            <td>{{row.edescription}}</td>
+                            <td>{{row.scheduledOn}}</td>
                             
                         </tr>
                     </tbody>
@@ -38,7 +38,6 @@
 <div class="container">
     <ul>
        <li><input type="button" ng-click="gotToAddUser()" value="Add user"></li>
-       <li>Add Event</li>
+       <li><input type="button" ng-click="gotToAddEvent()" value="Add Event"></li>
     </ul>
 </div>
-

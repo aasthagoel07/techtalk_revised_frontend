@@ -14,5 +14,9 @@ app.config(function($routeProvider){
         .when("/addUser", {
            templateUrl : "../views/addUser.html",
             controller : "adduserController"
+        })
+        .when("/addEvent", {
+           templateUrl : "../views/addEvent.html",
+            controller : "addeventController"
         });
 });

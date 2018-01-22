@@ -1,0 +1,17 @@
+<div class="container" ng-init="getAllusers()">
+    <form ng-submit="registerEvent()">
+        <input type="text" placeholder="Event Name" ng-model="ename">
+        <input type="text" placeholder="Event Description" ng-model="edes">
+        <input type="text" placeholder="Date" ng-model="edate">
+        <input type="file" placeholder="Presentation" id="filePPT"><br>
+        <select  ng-model="selectedUserID" name="presenter">
+           
+            <option value="{{row.userID}}" ng-repeat="row in rows">{{row.username}}</option>
+        </select>
+        
+        
+        
+        <input type="submit" value="Submit">
+        
+    </form>
+</div>
