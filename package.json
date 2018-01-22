@@ -1,0 +1,26 @@
+{
+  "name": "techtalk_revised_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "angular-bootstrap-calendar": "^1.0.0",
+    "bootstrap": "^4.0.0",
+    "moment": "^2.20.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeeshanAlAbedin/techtalk_revised_frontend.git"
+  },
+  "author": "Zeeshan Al Abedin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeeshanAlAbedin/techtalk_revised_frontend/issues"
+  },
+  "homepage": "https://github.com/ZeeshanAlAbedin/techtalk_revised_frontend#readme"
+}
