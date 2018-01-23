@@ -1,8 +1,6 @@
 app.controller('admindashboardController', function($scope, $http, $location){
     
-    $scope.startFun = function (){
-        alert("WORKING");
-    }
+    
     
     $scope.gotToAddUser = function(){
         console.log("Clicked");
@@ -14,13 +12,22 @@ app.controller('admindashboardController', function($scope, $http, $location){
         $location.path('/addEvent');
     }
     
+    $scope.gotToRemoveEvent = function(){
+        console.log("Clicked");
+        $location.path('/removeEvent');
+    }
+    
+    $scope.gotToUpdateEvent = function(){
+        console.log("Clicked");
+        $location.path('/updateEvent');
+    }
     
     //Get all events
     $scope.getAllEvents = function(){
         
-         $http.get('http://localhost:51047/api/event/GetAllEvent')
+         $http.get('http://localhost:51047/api/event/GetAllEvents')
             .then(function successCallback(response) {
-             console.log("Success");   
+             console.log(response);   
              $scope.rows = response.data;
              
 

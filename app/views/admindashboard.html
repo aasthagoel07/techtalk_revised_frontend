@@ -14,8 +14,9 @@
                 <tbody>
                     <tr ng-repeat="row in rows">
                         <td><button type="button" class="btn btn-info">{{row.ename}}</td>
-                            <td>{{row.edescription}}</td>
-                            <td>{{row.scheduledOn}}</td>
+                            <td>{{row.edes}}</td>
+                            <td>{{row.edate}}</td>
+                            <td>{{row.userid}}</td>
                             
                         </tr>
                     </tbody>
@@ -39,5 +40,7 @@
     <ul>
        <li><input type="button" ng-click="gotToAddUser()" value="Add user"></li>
        <li><input type="button" ng-click="gotToAddEvent()" value="Add Event"></li>
+       <li><input type="button" ng-click="gotToRemoveEvent()" value="RemoveEvent"></li>
+       <li><input type="button" ng-click="gotToUpdateEvent()" value="UpdateEvent"></li>
     </ul>
 </div>

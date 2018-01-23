@@ -1,4 +1,4 @@
-<div class="container" ng-init="getAllusers()">
+<!--<div class="container" ng-init="getAllusers()">
     <form ng-submit="registerEvent()">
         <input type="text" placeholder="Event Name" ng-model="ename">
         <input type="text" placeholder="Event Description" ng-model="edes">
@@ -6,7 +6,7 @@
         <input type="file" placeholder="Presentation" id="filePPT"><br>
         <select  ng-model="selectedUserID" name="presenter">
            
-            <option value="{{row.userID}}" ng-repeat="row in rows">{{row.username}}</option>
+            <option value="{{row.userid}}" ng-repeat="row in rows">{{row.uname}}</option>
         </select>
         
         
@@ -15,3 +15,32 @@
         
     </form>
 </div>
+
+-->
+
+
+<div class="container" ng-init="getAllusers()">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="d-flex flex-column">
+                    <div class="p-2">
+                        <input type="text" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="Event Name" ng-model="ename">
+                    </div>
+                    <div class="p-2">
+                        <select  ng-model="selectedUserID" name="presenter">
+                            <option value="{{row.userid}}" ng-repeat="row in rows">{{row.uname}}</option>
+                        </select>
+                    </div>
+                    <div class="p-2">
+                        <textarea placeholder="Event Description" class="form-control mr-sm-2 mb-2 mb-sm-0" ng-model="edes"></textarea>
+                    </div>
+                    <div class="p-2">
+                        <input type="date" placeholder="Event Date" class="form-control mr-sm-2 mb-2 mb-sm-0" ng-model="edate">
+                    </div>
+                    <div class="p-1">
+                        <button type="button" class="btn btn-dark" ng-click="registerEvent()">Register Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

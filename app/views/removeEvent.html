@@ -1,0 +1,32 @@
+    <!-- GET LIST OF ALL EVENTS WITH A DELETE BUTTON -->
+
+    <div class="container" ng-init="getAllEvents()">
+        <div class="row">
+            <div class="col-sm-9">
+                <table id="eventTable" class="table table-bordered table-condensed table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Presenter Name</th>
+                            <th>Event Date</th>
+                            <th>Delete Event</th>
+                            <th>"Event ID for Debug"</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in rows">
+                            <td>{{row.ename}}</td>
+                            <td>{{row.userid}}</td>
+                            <td>{{row.edate}}</td>
+                            <td><input type="button" value="Delete" class="btn btn-sm" ng-click="deleteEvent(row.eventid)"></td>
+                            <td>{{row.eventid}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-3">
+
+
+            </div>
+        </div>
+    </div>

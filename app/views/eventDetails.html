@@ -1,0 +1,32 @@
+<div class="container" ng-init="eventDetails()" >
+    <div class="row">
+        <div class="col-sm-9">
+          <table class="table table-bordered table-condensed table-striped">
+              <thead>
+                  <tr>
+                      <th>Event Name</th>
+                      <th>Event description</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="resp in res">
+                      <td>{{resp.ename}}</td>
+                      <td>{{resp.edes}}</td>
+                  </tr>
+              </tbody>
+          </table>
+           
+            
+            </div>
+            <div class="col-sm-3">
+                <!-- Highlighted Events -->
+                <h2>Event Highlights</h2>
+                <ul>
+                    <li>Angular 4</li>
+                    <li>Node Js</li>
+                    <li>ElectronJS</li>
+                </ul>
+
+            </div>
+        </div>
+</div>

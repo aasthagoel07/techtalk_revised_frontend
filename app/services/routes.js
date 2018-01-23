@@ -18,5 +18,17 @@ app.config(function($routeProvider){
         .when("/addEvent", {
            templateUrl : "../views/addEvent.html",
             controller : "addeventController"
+        })
+        .when("/eventDetails/:id", {
+           templateUrl : "../views/eventDetails.html",
+            controller : "eventdetailsController"
+        })
+        .when("/removeEvent", {
+           templateUrl : "../views/removeEvent.html",
+            controller : "removeeventController"
+        })
+        .when("/updateEvent", {
+           templateUrl : "../views/updateEvent.html",
+            controller : "updateeventController"
         });
 });

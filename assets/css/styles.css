@@ -2,6 +2,13 @@ body {
     padding-top: 5rem;
 }
 
+
+.calendar-week-header, .grid-cell{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
 .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
@@ -86,8 +93,6 @@ ul.dropdown-lr {
 		color: #eee;
 	}
 }
-
-
 
 
 

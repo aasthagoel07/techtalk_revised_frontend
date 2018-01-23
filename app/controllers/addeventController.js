@@ -28,9 +28,6 @@ app.controller('addeventController', function ($scope, $http) {
 
     $scope.registerEvent = function () {
 
-        var fileInput = document.getElementById("filePPT");
-        //presentationURL: fileInput
-
         var EventObj = {
             ename: $scope.ename,
             edescription: $scope.edes,
@@ -40,8 +37,8 @@ app.controller('addeventController', function ($scope, $http) {
         
         
 
-        if (fileInput.files.length == 0) {
-            var condit = confirm("Upload Data without a presentation?");
+        
+            var condit = confirm("Upload Data?");
             if (condit == true) {
                 $http.post('http://localhost:51047/api/event/PostEventTable', EventObj)
                     .then(function successCallback() {
@@ -52,28 +49,7 @@ app.controller('addeventController', function ($scope, $http) {
 
             } else
                 alert("Upload Canceled");
-        } else {
-            $http.post('http://localhost:51047/api/event/PostEventTable', EventObj)
-                .then(function successCallback() {
-                    alert("Success");
-                }, function errorCallback() {
-                    alert("Failure");
-                });
-            var file = fileInput.files[0];
-            var payload = new FormData();
-            payload.append("file", file);
-            //Uploading file data
-            $http.post('', payload,{
-                transformRequest : angular.identity,
-                headers : {"Content-Type": undefined}
-            }).then(function(data){
-                
-            }, function(error){
-                
-            });
-
-        }
-
+        
     }
 
 });
