@@ -1,108 +1,65 @@
 <div class="container" ng-init="getAllEvents()">
-    <div class="row">
-        <div class="col-sm-9">
-            <table id="eventTable" class="table table-bordered table-condensed table-striped">
-                <thead>
-                    <tr>
-                        <th>Event Name</button>
-                        </th>
-                        <th>Presenter Name</th>
-                        <th>Event Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="row in rows">
-                        <td><button type="button" class="btn btn-info" ng-click="pageChange(row.eventid)">{{row.ename}}</td>
-                            <td>{{row.userid}}</td>
-                            <td>{{row.edate}}</td>
-                            
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-sm-3">
-                <!-- Highlighted Events -->
-                <h2>Event Highlights</h2>
-                <ul>
-                    <li>Angular 4</li>
-                    <li>Node Js</li>
-                    <li>ElectronJS</li>
-                </ul>
 
-            </div>
-            
-   <div class="container">
-	
-	<div class="grid-calendar">
-		<div class="row calendar-week-header">
-			<div class="col-xs-1 grid-cell"><div><div><span>S</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>M</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>T</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>W</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>T</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>F</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>S</span></div></div></div>
-		</div>
-
-		<div class="row calendar-week">
-			<div class="col-xs-1 grid-cell previous-month"><div><div><span>31</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>1</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>2</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>3</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>4</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>5</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>6</span></div></div></div>
-		</div>
-
-		<div class="row calendar-week">
-			<div class="col-xs-1 grid-cell"><div><div><span>7</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>8</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>9</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>10</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>11</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>12</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>13</span></div></div></div>
-		</div>
-
-		<div class="row calendar-week">
-			<div class="col-xs-1 grid-cell"><div><div><span>14</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>15</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>16</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>17</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>18</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>19</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>20</span></div></div></div>
-		</div>
-
-		<div class="row calendar-week">
-			<div class="col-xs-1 grid-cell"><div><div><span>21</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>22</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>23</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>24</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>25</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>26</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>27</span></div></div></div>
-		</div>
-
-		<div class="row calendar-week">
-			<div class="col-xs-1 grid-cell"><div><div><span>28</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>29</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>30</span></div></div></div>
-			<div class="col-xs-1 grid-cell"><div><div><span>31</span></div></div></div>
-			<div class="col-xs-1 grid-cell next-month"><div><div><span>1</span></div></div></div>
-			<div class="col-xs-1 grid-cell next-month"><div><div><span>2</span></div></div></div>
-			<div class="col-xs-1 grid-cell next-month"><div><div><span>3</span></div></div></div>
-			
-		</div>
-	</div>
-</div>         
-            
-            
-
-            
-            
-            
-            
-            
+  <!-- Adding Calendar View -->
+  <div class="row">
+    <div class="col-md-9">
+      <div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div>
     </div>
-</div>
+
+    <div class="col-md-3">
+
+           <!--<div  ng-show="SelectedEvent"  class="alert alert-success" style="margin-top:50px">
+              
+               <h3>{{SelectedEvent.title}}</h3>
+               <p>{{SelectedEvent.description}}</p>
+               <input type="button" value="Details" class="btn btn-primary" ng-click="pageChange(SelectedEvent.evid)">
+               
+             </div>-->
+             <md-content layout="row" flex layout-align="center" layout-fill>
+              <div flex="90" class="content">
+                <md-item ng-repeat="option in options" class="item"
+                ng-class="{ 'selected-item': $index == selectedUserIndex}">
+                <md-item-content class="user tile md-whiteframe-z1"
+                ng-class="{ 'selected md-whiteframe-z2': $index == selectedUserIndex}"
+                layout="column">
+                <div layout="row" layout-fill ng-click="selectUserIndex($index)" class="folded">
+                  
+                
+                  <div class="md-tile-content" layout="column" layout-align="center start">
+                    <h3>{{ option.name }}</h3>
+
+                    <!-- <p ng-hide="$index == selectedUserIndex">
+                      <span>Something</span>
+                    </p> -->
+                  </div>
+                </div>
+                <md-divider layout-fill ng-show="$index == selectedUserIndex"></md-divider>
+                <div layout="column" layout-fill class="expanded">
+                  <span>some content</span>
+                  <br/>
+                  <span>some content</span>
+                  <br/>
+                  <span>some content</span>
+                  <br/>
+                  <span>some content</span>
+                  <br/>
+                  <span>some content</span>
+                  <br/>
+                  <span>some content</span>
+                  <br/>
+                  <span>some content</span>
+                </div>
+              </md-item-content>
+              <md-divider class="divider-inset" ng-if="!$last"></md-divider>
+            </md-item>
+          </div>
+        </md-content>
+
+      </div>
+    </div>
+
+
+
+
+
+  </div>
