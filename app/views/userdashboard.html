@@ -1,20 +1,106 @@
-<div class="container" ng-init="getAllEvents()">
+<div class="container" ng-init="interest()">
 
   <!-- Adding Calendar View -->
+
   <div class="row">
     <div class="col-md-9">
       <div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div>
     </div>
 
     <div class="col-md-3">
+      <div class="card" id="myaccordian">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title" data-target="#panel1" data-toggle="collapse">Interested</h3>
+          </div>
+          <div class="card-collapse collapse" id="panel1">
+            <div  ng-repeat="ievent in ievents">
+                <div class="card-block"  >
+                  <p>{{ievent}}</p>                  
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="card card-primary">
+            <div class="card-header">
+        <h3 class="card-title" data-target="#panel2" data-toggle="collapse">Attended</h3>
+    </div>
+    <div class="card-collapse collapse" id="panel2">
+        <div  ng-repeat="a in aevents">
+                <div class="card-block"  >
+                  <p>{{a}}</p>                  
+                </div>
+            </div>
+  </div>
+</div>
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title" data-target="#panel3" data-toggle="collapse">Presented</h3>
+</div>
+<div class="card-collapse collapse" id="panel3">
+     <div  ng-repeat="p in pevents">
+                <div class="card-block"  >
+                  <p>{{p}}</p>                  
+                </div>
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- <div id="Accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="HeadingOne">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#Accordion" href="#CollapseOne" aria-expanded="true" aria-controls="CollapseOne">
+                  Collapsible Group Item 1
+                  </a>
+                </h4>
+              </div>
 
-           <!--<div  ng-show="SelectedEvent"  class="alert alert-success" style="margin-top:50px">
+              <div id="CollapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="HeadingOne">
+                A squad faces a misery below the sixty wrist. The look dodges underneath each symbol! The fleet minor fries a sea camp. Its balanced contract talks before my metaphor. Our generator stretches. A wrecker faints throughout the peer.
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="HeadingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#Accordion" href="#CollapseTwo" aria-expanded="false" aria-controls="CollapseTwo">
+                  Collapsible Group Item 2
+                  </a>
+                </h4>
+              </div>
+
+              <div id="CollapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="HeadingTwo">
+                The crushing unseen dies on top of the fruit. How can the curse struggle? The assured paperback leaves an anguish across a log nickname. Why does an opposite desire the simple case?
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="HeadingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#Accordion" href="#CollapseThree" aria-expanded="false" aria-controls="CollapseThree">
+                  Collapsible Group Item 3
+                  </a>
+                </h4>
+              </div>
+
+              <div id="CollapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="HeadingThree">
+                The exhibit changes the cloth next to a contracted constant. With the seventh musician hums the challenging timer. Past a scenery expands the dotted rope. An ownership negates the inverse fortune. A word sauces the weird pocket. The sin alters the second west.
+              </div>
+            </div>
+          </div>
+
+
+           <div  ng-show="SelectedEvent"  class="alert alert-success" style="margin-top:50px">
               
                <h3>{{SelectedEvent.title}}</h3>
                <p>{{SelectedEvent.description}}</p>
                <input type="button" value="Details" class="btn btn-primary" ng-click="pageChange(SelectedEvent.evid)">
                
-             </div>-->
+             </div>
              <md-content layout="row" flex layout-align="center" layout-fill>
               <div flex="90" class="content">
                 <md-item ng-repeat="option in options" class="item"
@@ -28,38 +114,19 @@
                   <div class="md-tile-content" layout="column" layout-align="center start">
                     <h3>{{ option.name }}</h3>
 
-                    <!-- <p ng-hide="$index == selectedUserIndex">
+                    <p ng-hide="$index == selectedUserIndex">
                       <span>Something</span>
-                    </p> -->
+                    </p>
                   </div>
                 </div>
                 <md-divider layout-fill ng-show="$index == selectedUserIndex"></md-divider>
                 <div layout="column" layout-fill class="expanded">
-                  <span>some content</span>
+                  <span ng-repeat="ievent in ievents">{{ievent}}</span>
                   <br/>
-                  <span>some content</span>
-                  <br/>
-                  <span>some content</span>
-                  <br/>
-                  <span>some content</span>
-                  <br/>
-                  <span>some content</span>
-                  <br/>
-                  <span>some content</span>
-                  <br/>
-                  <span>some content</span>
                 </div>
               </md-item-content>
               <md-divider class="divider-inset" ng-if="!$last"></md-divider>
             </md-item>
           </div>
-        </md-content>
+      </md-content> -->
 
-      </div>
-    </div>
-
-
-
-
-
-  </div>

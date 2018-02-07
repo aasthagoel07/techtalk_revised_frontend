@@ -1,5 +1,6 @@
 app.config(function($routeProvider){
-    $routeProvider.when("/",{
+    $routeProvider
+    .when("/",{
         templateUrl : "../views/home.html",
         controller : "indexController"
         })

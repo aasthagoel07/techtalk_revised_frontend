@@ -11,7 +11,7 @@ app.controller('userdashboardController', ['$scope', '$http', 'uiCalendarConfig'
     {
       name: 'Upcoming'
     }];
-    
+    var uid;
     
     $scope.selectedUserIndex = undefined;
     $scope.selectUserIndex = function (index) {
@@ -114,8 +114,52 @@ app.controller('userdashboardController', ['$scope', '$http', 'uiCalendarConfig'
         console.log("Clicked");
         $location.path('/uploadppt');
     }
-    
-    
-    
+
+
+    $scope.calling=function(){
+        $http.get('http://localhost:51047/api/event/geteventname?uid='+uid)
+            .then(function successCallback(successResponse){
+
+                $scope.ievents=successResponse.data.$values;
+                 console.log($scope.ievents);
+            },function errorCallback(response){
+                console.log("Unable to perform get request");
+            });
+    }
+    $scope.calling2=function(){
+        $http.get('http://localhost:51047/api/event/geteventnamep?uid='+uid)
+            .then(function successCallback(successfullResponse){
+                $scope.aevents=successfullResponse.data.$values;
+            },function errorCallback(response){
+                console.log("Unable to perform get request");
+            });
+    }
+    $scope.calling3=function(){
+        $http.get('http://localhost:51047/api/event/getpresentedevent?uid='+uid)
+            .then(function successCallback(successfullResponse){
+                $scope.pevents=successfullResponse.data.$values;
+            },function errorCallback(response){
+                console.log("Unable to perform get request");
+            });
+    }
+     $scope.interest=function(){
+        var data=JSON.parse(localStorage.getItem('key'));
+               var user={
+                username:data.username,
+                password:data.password
+            };
+            $http.post('http://localhost:51047/api/event/getusername', user)
+            .then(function successCallback(response) {
+                console.log(response);
+                uid=response.data;
+                $scope.calling();
+                $scope.calling2();
+                $scope.calling3();
+            }, function errorCallback(response) {
+                console.log("Unable to perform get request");
+            });
+            
+           
+    }
 
 }]);

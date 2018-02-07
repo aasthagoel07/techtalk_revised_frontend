@@ -1,27 +1,28 @@
 <div class="container" ng-init="eventDetails()" >
-    <div class="row">
-        <div class="col-sm-9">
-          
-          
-            <h2>Event Details</h2><hr><br>
-            
-          <label><h5>Event Name:</h5></label>
-            <label ng-repeat="resp in res">{{resp.ename}}</label><br></br>
-          <label><h5>Event Description:</h5></label>
-          <label ng-repeat="resp in res">{{resp.edes}}</label>
-          <br/>
-           <button type="button" class="btn btn-dark" ng-click="userInterested()">Interested</button>
-            
-            </div>
-            <div class="col-sm-3">
-                <!-- Highlighted Events -->
-                <h2>Event Highlights</h2>
-                <ul>
-                    <li>Angular 4</li>
-                    <li>Node Js</li>
-                    <li>ElectronJS</li>
-                </ul>
-
-            </div>
-        </div>
-</div>
+  <div class="row">
+    <div class="col-sm-9">
+      <h2>Event Details</h2><hr><br>
+      <label><h5>Event Name:</h5></label>
+      <label ng-repeat="resp in res">{{resp.ename}}</label><br></br>
+      <label><h5>Event Description:</h5></label>
+      <label ng-repeat="resp in res">{{resp.edes}}</label><br></br>
+      <label><h5>Event Date:</h5></label>
+      <label ng-repeat="resp in res">{{resp.edate}} </label><br></br>
+      <label><h5>Presenter Name:</h5></label>
+      <label ng-bind=presenter> </label>
+      <br/>
+      <span><button  ng-hide="btn" type="submit" class="btn btn-dark" ng-click="userInterested()" ng-disabled="dis" >Interested</button></span>
+      <!--<button ng-hide="ispass" type="button" class="btn btn-dark" ng-click="userInterested()">Attended</button>-->     
+      </div>  
+      <div class="col-sm-3">
+        <!-- Highlighted Events -->
+        <!-- <h2>Event Highlights</h2>
+        <ul>
+          <li>Angular 4</li>
+          <li>Node Js</li>
+          <li>ElectronJS</li>
+        </ul>
+ -->
+      </div>
+    </div>
+  </div>

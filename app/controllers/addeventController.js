@@ -12,6 +12,7 @@ app.controller('addeventController', function ($scope, $http) {
             }, function errorCallback(response) {
                 console.log("Unable to perform get request");
             });
+
         
     }
     
@@ -38,7 +39,7 @@ app.controller('addeventController', function ($scope, $http) {
         }
             
         else {
-            var confirmChoice = confirm("Do you want to add a past already passed event?");
+            var confirmChoice = confirm("Do you want to add a past event?");
         if(confirmChoice == true){
             $scope.addEventFunction();  
         }
@@ -62,7 +63,6 @@ app.controller('addeventController', function ($scope, $http) {
             scheduledOn: $scope.edate,
             userID: $scope.selectedUserID
         };
-
             var condit = confirm("Upload Data?");
             if (condit == true) {
                 $http.post('http://localhost:51047/api/event/PostEventTable', EventObj)

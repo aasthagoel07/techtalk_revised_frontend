@@ -26,8 +26,9 @@
                         <input type="text" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="Event Name" ng-model="ename">
                     </div>
                     <div class="p-2">
-                        <select  ng-model="selectedUserID" name="presenter">
-                            <option value="{{row.userid}}" ng-repeat="row in rows">{{row.uname}}</option>
+                        <select  ng-model="selectedUserID" name="presenter" >
+                            <option value="" disabled selected>Please Select Presenter</option>
+                            <option value="{{row.userid}}" ng-repeat="row in rows">{{row.name}}</option>
                         </select>
                     </div>
                     <div class="p-2">

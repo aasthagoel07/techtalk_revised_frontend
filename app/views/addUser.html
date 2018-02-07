@@ -17,6 +17,10 @@
             <div class="col-md-9">
                 <div class="d-flex flex-column">
                     <div class="p-2">
+                        <input type="text" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="Name" ng-model="name">
+                    </div>
+                    
+                    <div class="p-2">
                         <input type="text" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="Username" ng-model="username">
                     </div>
                     
@@ -26,8 +30,15 @@
                     <div class="p-2">
                         <input type="text" placeholder="CGI CODE" class="form-control mr-sm-2 mb-2 mb-sm-0" ng-model="cgicode">
                     </div>
+                     <div class="p-2">
+                        <input type="text" placeholder="Designation" class="form-control mr-sm-2 mb-2 mb-sm-0" ng-model="designation">
+                    </div>
+                    <div class="p-2">
+                        <input type="radio" ng-model="admin" value="true">Admin
+                        <input type="radio" ng-model="admin" value="false">User
+                    </div>
                     <div class="p-1">
-                        <button type="button" class="btn btn-dark" ng-click="registerUser()">Register User</button>
+                        <button type="button" class="btn btn-dark" ng-click="registerUser()">Register</button>
                     </div>
                 </div>
             </div>
